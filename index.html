@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The CocktailDB</title>
+
+
+    <!-- linked bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+    <style>
+        body{
+            background: #d3d3d3;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1 class="text-center" >Welcome to <span class='text-success'>The CocktailDB</span></h1>
+
+    <!-- drink item details  -->
+    <section class="d-none"  class="mb-5">
+           <!-- show spinner  -->
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        <div class="container">
+            <div id="drink-details" class="card w-75 mx-auto">
+                <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top img-thumbnail" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+    </section>
+    <!-- show here all same category-items details  -->
+    <section class="d-none">
+        <div class="container my-5">
+                <div id="category-items" class="row row-cols-1 row-cols-md-6 g-4">
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+            
+        </div>
+    </section>
+
+    <!-- search area  -->
+    <section id="seatch-area">
+        <div class="container">
+            <div class="input-group mb-3 w-50 mx-auto">
+                <input type="text" class="form-control" placeholder="Search for a Cocktail..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+              </div>
+        </div>
+    </section>
+
+    <!-- show all drink item  -->
+    <section >
+      
+        <!-- show spinner  -->
+          <!-- <div class="d-flex justify-content-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div> -->
+        <div class="container my-5">
+            <!-- <p  id="error-message"></p> -->
+                <div id="category-items" class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+
+                        <img src="https://www.thecocktaildb.com/images/media/drink/ypxsqy1483387829.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+    
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+            
+        </div>
+    </section>
+
+
+
+   
+
+</body>
+</html>

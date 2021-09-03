@@ -12,7 +12,7 @@ const getAllDrinkInfo = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            loader.classList.add("visually-hidden");
+            // loader.classList.add("visually-hidden");
             if (data.drinks === null) {
                 errorMessage();
             } else {
@@ -59,6 +59,7 @@ const displayAllItems = (items) => {
         `;
 
         drinksItemContainer.appendChild(div);
+        loader.classList.add("visually-hidden");
     })
 }
 
@@ -67,7 +68,7 @@ const itemDetails = (drinkId) => {
     DetalsLoader.classList.remove("visually-hidden");
     const idUrl = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`;
     fetch(idUrl).then(response => response.json()).then(data => {
-        DetalsLoader.classList.add("visually-hidden");
+        // DetalsLoader.classList.add("visually-hidden");
         // console.log();
         displatyDitails(data.drinks[0]);
     }).catch(error => {
@@ -79,7 +80,7 @@ const itemDetails = (drinkId) => {
 
 
 const displatyDitails = (details) => {
-    console.log(details);
+    getDataCategoryItem(details.strCategory);
     drinkDetails.textContent = "";
     drinkDetails.classList.remove('d-none');
     drinkDetails.innerHTML = `
@@ -90,4 +91,36 @@ const displatyDitails = (details) => {
         <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
     `;
+}
+
+const getDataCategoryItem = (categoryName) =>{
+   let categoryUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${categoryName}`;
+   fetch(categoryUrl).then(res => res.json()).then(data => {
+    displayCategoryItem(data.drinks);
+   }).catch(error => {
+       console.log(error.message);
+   })
+    // console.log(categoryUrl);
+}
+
+const displayCategoryItem =(categories) =>{
+    const categoryField = document.getElementById("category-items");
+    categoryField.textContent = '';
+    categories.splice(0, 6).forEach(category =>{
+        console.log(category);
+        const div = document.createElement("div");
+        div.classList.add('col');
+        div.innerHTML = `
+        <div onclick='itemDetails("${category.idDrink}")' class="card h-100">
+            <img src="${category.strDrinkThumb}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${category.strDrink}</h5>
+            </div>
+        </div>
+        `;
+
+        categoryField.appendChild(div);
+         DetalsLoader.classList.add("visually-hidden");
+    })
+    
 }

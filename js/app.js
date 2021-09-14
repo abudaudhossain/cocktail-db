@@ -3,9 +3,17 @@ const drinksItemContainer = document.getElementById('all-items');
 const errorMessageFeild = document.getElementById('error-message');
 let url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
 const searchFeild = document.getElementById('search-feild');
+const searchBtn = document.getElementById('search-btn');
 const loader = document.getElementById('loader');
 const DetalsLoader = document.getElementById('details-loder');
 const drinkDetails = document.getElementById('drink-details');
+
+// enter key press searchBtn click function 
+searchFeild.addEventListener("keypress", (event) => {
+    // event.preventDefault();
+    if (event.key ==="Enter")
+    searchBtn.click();
+});
 
 const getAllDrinkInfo = () => {
     loader.classList.remove("visually-hidden");
